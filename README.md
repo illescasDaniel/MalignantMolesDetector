@@ -1,6 +1,6 @@
-# Simple Skin cancer iOS app
+# Skin Cancer Detector
 
-Simple app to detect malignant moles in your skin using a convolutional network trained using transfer learning.
+Simple iOS app to detect malignant moles in your skin using a convolutional network trained using transfer learning.
 
 - Dataset: https://www.kaggle.com/datasets/fanconic/skin-cancer-malignant-vs-benign
 - Neural network used to train the dataset: MobileNetV3
