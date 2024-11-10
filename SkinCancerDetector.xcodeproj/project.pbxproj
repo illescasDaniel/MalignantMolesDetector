@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		66F5F095B53E0808B2A12F6E /* Pods_SkinCancerDetectorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D872955DE2CF03B626FE21 /* Pods_SkinCancerDetectorTests.framework */; };
+		9C8EEB9522E10FA9D331953A /* Pods_SkinCancerDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8833DFF4AB10E3D3E037D438 /* Pods_SkinCancerDetector.framework */; };
+		FC35FE4060ABDCBFBC51E0BF /* Pods_SkinCancerDetector_SkinCancerDetectorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9D03CDD129B6B176941125 /* Pods_SkinCancerDetector_SkinCancerDetectorUITests.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		6500DD472CE0D08F0047D5BA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,9 +30,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14ADA488747C816F03E9EC68 /* Pods-SkinCancerDetector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinCancerDetector.release.xcconfig"; path = "Target Support Files/Pods-SkinCancerDetector/Pods-SkinCancerDetector.release.xcconfig"; sourceTree = "<group>"; };
+		4D8AE7B39BA9E10E7DCED7AD /* Pods-SkinCancerDetector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinCancerDetector.debug.xcconfig"; path = "Target Support Files/Pods-SkinCancerDetector/Pods-SkinCancerDetector.debug.xcconfig"; sourceTree = "<group>"; };
+		4E9D03CDD129B6B176941125 /* Pods_SkinCancerDetector_SkinCancerDetectorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkinCancerDetector_SkinCancerDetectorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50742BD8959AAED0AC0F6B7B /* Pods-SkinCancerDetectorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinCancerDetectorTests.release.xcconfig"; path = "Target Support Files/Pods-SkinCancerDetectorTests/Pods-SkinCancerDetectorTests.release.xcconfig"; sourceTree = "<group>"; };
 		6500DD352CE0D08E0047D5BA /* SkinCancerDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkinCancerDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6500DD462CE0D08F0047D5BA /* SkinCancerDetectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkinCancerDetectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6500DD502CE0D08F0047D5BA /* SkinCancerDetectorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkinCancerDetectorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		66D872955DE2CF03B626FE21 /* Pods_SkinCancerDetectorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkinCancerDetectorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71D68B548AD8AF9918839E74 /* Pods-SkinCancerDetector-SkinCancerDetectorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinCancerDetector-SkinCancerDetectorUITests.debug.xcconfig"; path = "Target Support Files/Pods-SkinCancerDetector-SkinCancerDetectorUITests/Pods-SkinCancerDetector-SkinCancerDetectorUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8833DFF4AB10E3D3E037D438 /* Pods_SkinCancerDetector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkinCancerDetector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B34BDCE567E758737EDDC02B /* Pods-SkinCancerDetectorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinCancerDetectorTests.debug.xcconfig"; path = "Target Support Files/Pods-SkinCancerDetectorTests/Pods-SkinCancerDetectorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F48157772EDD59B525BB5602 /* Pods-SkinCancerDetector-SkinCancerDetectorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinCancerDetector-SkinCancerDetectorUITests.release.xcconfig"; path = "Target Support Files/Pods-SkinCancerDetector-SkinCancerDetectorUITests/Pods-SkinCancerDetector-SkinCancerDetectorUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -52,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C8EEB9522E10FA9D331953A /* Pods_SkinCancerDetector.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66F5F095B53E0808B2A12F6E /* Pods_SkinCancerDetectorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,12 +83,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC35FE4060ABDCBFBC51E0BF /* Pods_SkinCancerDetector_SkinCancerDetectorUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FC9186EAB91D2CB736A7A1A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4D8AE7B39BA9E10E7DCED7AD /* Pods-SkinCancerDetector.debug.xcconfig */,
+				14ADA488747C816F03E9EC68 /* Pods-SkinCancerDetector.release.xcconfig */,
+				71D68B548AD8AF9918839E74 /* Pods-SkinCancerDetector-SkinCancerDetectorUITests.debug.xcconfig */,
+				F48157772EDD59B525BB5602 /* Pods-SkinCancerDetector-SkinCancerDetectorUITests.release.xcconfig */,
+				B34BDCE567E758737EDDC02B /* Pods-SkinCancerDetectorTests.debug.xcconfig */,
+				50742BD8959AAED0AC0F6B7B /* Pods-SkinCancerDetectorTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		6500DD2C2CE0D08E0047D5BA = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +110,8 @@
 				6500DD492CE0D08F0047D5BA /* SkinCancerDetectorTests */,
 				6500DD532CE0D08F0047D5BA /* SkinCancerDetectorUITests */,
 				6500DD362CE0D08E0047D5BA /* Products */,
+				0FC9186EAB91D2CB736A7A1A /* Pods */,
+				8E302A92043B607E0531D295 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +125,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		8E302A92043B607E0531D295 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8833DFF4AB10E3D3E037D438 /* Pods_SkinCancerDetector.framework */,
+				4E9D03CDD129B6B176941125 /* Pods_SkinCancerDetector_SkinCancerDetectorUITests.framework */,
+				66D872955DE2CF03B626FE21 /* Pods_SkinCancerDetectorTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -99,6 +142,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6500DD5A2CE0D08F0047D5BA /* Build configuration list for PBXNativeTarget "SkinCancerDetector" */;
 			buildPhases = (
+				FCC3976A4C90EA9B80F95F25 /* [CP] Check Pods Manifest.lock */,
 				6500DD312CE0D08E0047D5BA /* Sources */,
 				6500DD322CE0D08E0047D5BA /* Frameworks */,
 				6500DD332CE0D08E0047D5BA /* Resources */,
@@ -111,8 +155,6 @@
 				6500DD372CE0D08E0047D5BA /* SkinCancerDetector */,
 			);
 			name = SkinCancerDetector;
-			packageProductDependencies = (
-			);
 			productName = SkinCancerDetector;
 			productReference = 6500DD352CE0D08E0047D5BA /* SkinCancerDetector.app */;
 			productType = "com.apple.product-type.application";
@@ -121,6 +163,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6500DD5D2CE0D08F0047D5BA /* Build configuration list for PBXNativeTarget "SkinCancerDetectorTests" */;
 			buildPhases = (
+				93F10642312D92A7487E8271 /* [CP] Check Pods Manifest.lock */,
 				6500DD422CE0D08F0047D5BA /* Sources */,
 				6500DD432CE0D08F0047D5BA /* Frameworks */,
 				6500DD442CE0D08F0047D5BA /* Resources */,
@@ -134,8 +177,6 @@
 				6500DD492CE0D08F0047D5BA /* SkinCancerDetectorTests */,
 			);
 			name = SkinCancerDetectorTests;
-			packageProductDependencies = (
-			);
 			productName = SkinCancerDetectorTests;
 			productReference = 6500DD462CE0D08F0047D5BA /* SkinCancerDetectorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -144,6 +185,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6500DD602CE0D08F0047D5BA /* Build configuration list for PBXNativeTarget "SkinCancerDetectorUITests" */;
 			buildPhases = (
+				6AA7625E010925B37D948FE9 /* [CP] Check Pods Manifest.lock */,
 				6500DD4C2CE0D08F0047D5BA /* Sources */,
 				6500DD4D2CE0D08F0047D5BA /* Frameworks */,
 				6500DD4E2CE0D08F0047D5BA /* Resources */,
@@ -157,8 +199,6 @@
 				6500DD532CE0D08F0047D5BA /* SkinCancerDetectorUITests */,
 			);
 			name = SkinCancerDetectorUITests;
-			packageProductDependencies = (
-			);
 			productName = SkinCancerDetectorUITests;
 			productReference = 6500DD502CE0D08F0047D5BA /* SkinCancerDetectorUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -175,6 +215,7 @@
 				TargetAttributes = {
 					6500DD342CE0D08E0047D5BA = {
 						CreatedOnToolsVersion = 16.0;
+						LastSwiftMigration = 1600;
 					};
 					6500DD452CE0D08F0047D5BA = {
 						CreatedOnToolsVersion = 16.0;
@@ -230,6 +271,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6AA7625E010925B37D948FE9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkinCancerDetector-SkinCancerDetectorUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93F10642312D92A7487E8271 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkinCancerDetectorTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCC3976A4C90EA9B80F95F25 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkinCancerDetector-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6500DD312CE0D08E0047D5BA /* Sources */ = {
@@ -385,9 +495,11 @@
 		};
 		6500DD5B2CE0D08F0047D5BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D8AE7B39BA9E10E7DCED7AD /* Pods-SkinCancerDetector.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SkinCancerDetector/SkinCancerDetector.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -396,6 +508,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Take pictures to classify the image";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -406,7 +519,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
@@ -416,6 +529,8 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SkinCancerDetector/SkinCancerDetector-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				XROS_DEPLOYMENT_TARGET = 2.0;
@@ -424,9 +539,11 @@
 		};
 		6500DD5C2CE0D08F0047D5BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14ADA488747C816F03E9EC68 /* Pods-SkinCancerDetector.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SkinCancerDetector/SkinCancerDetector.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -435,6 +552,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Take pictures to classify the image";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -445,7 +563,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
@@ -455,6 +573,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SkinCancerDetector/SkinCancerDetector-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				XROS_DEPLOYMENT_TARGET = 2.0;
@@ -463,6 +582,7 @@
 		};
 		6500DD5E2CE0D08F0047D5BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B34BDCE567E758737EDDC02B /* Pods-SkinCancerDetectorTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -486,6 +606,7 @@
 		};
 		6500DD5F2CE0D08F0047D5BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50742BD8959AAED0AC0F6B7B /* Pods-SkinCancerDetectorTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -509,6 +630,7 @@
 		};
 		6500DD612CE0D08F0047D5BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71D68B548AD8AF9918839E74 /* Pods-SkinCancerDetector-SkinCancerDetectorUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -531,6 +653,7 @@
 		};
 		6500DD622CE0D08F0047D5BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F48157772EDD59B525BB5602 /* Pods-SkinCancerDetector-SkinCancerDetectorUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
