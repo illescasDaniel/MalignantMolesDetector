@@ -6,17 +6,24 @@
 	torch::jit::mobile::Module _impl;
 }
 
-- (nullable instancetype)initWithFileAtPath:(NSString*)filePath {
+- (instancetype)init {
 	self = [super init];
-	if (self) {
-		try {
-			_impl = torch::jit::_load_for_mobile(filePath.UTF8String);
-		} catch (const std::exception& exception) {
-			NSLog(@"%s", exception.what());
-			return nil;
-		}
-	}
 	return self;
+}
+
+- (BOOL)loadFileAtPath:(NSString*)filePath error:(NSError**)error NS_REFINED_FOR_SWIFT {
+	try {
+		_impl = torch::jit::_load_for_mobile(filePath.UTF8String);
+		return YES;
+	} catch (const std::exception& exception) {
+		if (error) {
+			NSString *errorMessage = [NSString stringWithUTF8String:exception.what()];
+			*error = [NSError errorWithDomain:@"TorchLoadErrorDomain"
+										 code:-1
+									 userInfo:@{NSLocalizedDescriptionKey: errorMessage}];
+		}
+		return NO;
+	}
 }
 
 - (NSArray<NSArray<NSNumber*>*>*)predictImages:(void*)imageBuffer numberOfImages:(int)N {
@@ -36,7 +43,7 @@
 		}
 
 		// Assuming the output is a 2D tensor with shape [N, num_classes]
-		int numClasses = outputTensor.size(1);
+		int64_t numClasses = outputTensor.size(1);
 
 		// Prepare to extract results
 		NSMutableArray* batchResults = [[NSMutableArray alloc] init];

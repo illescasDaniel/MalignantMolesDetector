@@ -10,9 +10,11 @@ import PhotosUI
 
 struct ContentView: View {
 	@State private var image: UIImage?
-	@State private var prediction: (benign: Float, malignant: Float)?
-	@State private var torchModule: TorchModuleWrapper?
+	@State private var malignantProbability: Float?
 	@State private var showingImagerPicker: ImagePicker.SourceType?
+	@State private var hasError: Bool = false
+	@State private var localizedError: LocalizedError?
+	private let malignantMolesPredictor = MalignantMolesPredictor()
 
 	var body: some View {
 		NavigationStack {
@@ -22,7 +24,9 @@ struct ContentView: View {
 					HStack {
 						Button(action: {
 							image = nil
-							prediction = nil
+							malignantProbability = nil
+							localizedError = nil
+							hasError = false
 							showingImagerPicker = .photoLibrary
 						}) {
 							VStack {
@@ -35,7 +39,9 @@ struct ContentView: View {
 
 						Button(action: {
 							image = nil
-							prediction = nil
+							malignantProbability = nil
+							localizedError = nil
+							hasError = false
 							showingImagerPicker = .camera
 						}) {
 							VStack {
@@ -58,14 +64,14 @@ struct ContentView: View {
 						}
 					}
 
-					if let (_, malignant) = self.prediction {
-						Gauge(value: malignant, in: 0...1) {
+					if let malignantProbability {
+						Gauge(value: malignantProbability, in: 0...1) {
 							Text("Malignant mole probability")
 								.font(.system(.headline))
 						} currentValueLabel: {
-							Text("\(malignant * 100, specifier: "%.0f")%")
+							Text("\(malignantProbability * 100, specifier: "%.0f")%")
 								.font(.largeTitle)
-								.foregroundStyle(malignant > 0.8 ? .red : Color(cgColor: UIColor.label.cgColor))
+								.foregroundStyle(malignantProbability > 0.8 ? .red : Color(cgColor: UIColor.label.cgColor))
 						} minimumValueLabel: {
 							Text("0")
 						} maximumValueLabel: {
@@ -82,30 +88,36 @@ struct ContentView: View {
 			.navigationTitle("Malignant Moles Detector")
 			.navigationBarTitleDisplayMode(.inline)
 		}
-		.onAppear {
-			torchModule = TorchModuleWrapper(modelFileName: "mobile_model")
+		.task {
+			do throws(MalignantMolesPredictor.LoadingError) {
+				try await malignantMolesPredictor.load()
+			} catch {
+				localizedError = error
+				hasError = true
+			}
 		}
 		.onChange(of: image) { newImage in
-			if let newImage, let prediction = predictImage(image: newImage) {
-				self.prediction = prediction
+			Task {
+				guard let newImage else { return }
+
+				do throws(MalignantMolesPredictor.PredictionError) {
+					let malignantProbability = try await malignantMolesPredictor.predictMalignantProbability(of: newImage)
+					self.malignantProbability = malignantProbability
+				} catch {
+					localizedError = error
+					hasError = true
+				}
 			}
 		}
 		.sheet(item: $showingImagerPicker, content: { sourceType in
 			ImagePicker(image: $image, sourceType: sourceType)
 		})
-	}
-
-	private func predictImage(image: UIImage) -> (benign: Float, malignant: Float)? {
-		if let torchModule {
-			if let predictions = torchModule.predict(images: [image]), let prediction = predictions.first, prediction.count == 2 {
-				return (benign: prediction[0].floatValue, malignant: prediction[1].floatValue)
-			} else {
-				print("Failed to get predictions")
-			}
-		} else {
-			print("Failed to initialize TorchModuleWrapper")
+		.alert("Error", isPresented: $hasError) {
+			Button("OK") {}
+		} message: {
+			Text(localizedError?.errorDescription ?? "Unknown error")
 		}
-		return nil
+
 	}
 }
 

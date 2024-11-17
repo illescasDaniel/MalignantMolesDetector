@@ -1,24 +1,42 @@
+//
+//  TorchModuleWrapper.swift
+//  MalignantMolesDetector
+//
+//  Created by Daniel Illescas Romero on 17/11/24.
+//
+
 import UIKit
-import Accelerate
 
-final class TorchModuleWrapper {
-	private var torchModule: TorchModule?
+actor TorchModuleWrapper {
 
-	init?(modelFileName: String) {
-		guard let modelFilePath = Bundle.main.path(forResource: modelFileName, ofType: "pt") else {
-			print("Model file not found in bundle")
-			return nil
-		}
+	enum LoadingError: LocalizedError {
+		case modelNotFound
+		case torchModuleLoadingError(Error)
 
-		torchModule = TorchModule(fileAtPath: modelFilePath)
-		if torchModule == nil {
-			print("Failed to initialize TorchModule")
-			return nil
+		var errorDescription: String? {
+			switch self {
+			case .modelNotFound: return "Model not found"
+			case .torchModuleLoadingError(let error): return error.localizedDescription
+			}
 		}
 	}
 
-	func predict(images: [UIImage]) -> [[NSNumber]]? {
-		let targetSize = CGSize(width: 224, height: 224)
+	private let torchModule = TorchModule()
+
+	init() {}
+
+	func load(modelFileName: String) async throws(LoadingError) {
+		guard let modelFilePath = Bundle.main.path(forResource: modelFileName, ofType: "pt") else {
+			throw .modelNotFound
+		}
+		do {
+			try await Task { try torchModule.loadFile(atPath: modelFilePath) }.value
+		} catch {
+			throw .torchModuleLoadingError(error)
+		}
+	}
+
+	func predict(images: [UIImage], targetSize: CGSize) async -> [[NSNumber]]? {
 		var buffers: [UnsafeMutablePointer<Float>] = []
 
 		for image in images {
@@ -41,27 +59,14 @@ final class TorchModuleWrapper {
 		}
 
 		// Call the batch prediction method
-		guard let results = torchModule?.predictImages(combinedBuffer, numberOfImages: Int32(images.count)) else {
-			print("Failed to predict images")
-			combinedBuffer.deallocate() // Ensure deallocation on failure
-			return nil
-		}
+		let results = await Task { torchModule.predictImages(combinedBuffer, numberOfImages: Int32(images.count)) }.value
 
 		combinedBuffer.deallocate() // Deallocate after use
 
-		// Convert results to probabilities using softmax
-		var probabilities: [[NSNumber]] = []
-		for result in results {
-			if let logits = result as? [Float] {
-				let softmaxed = softmax(logits)
-				probabilities.append(softmaxed.map { NSNumber(value: $0) })
-			}
-		}
-
-		return probabilities
+		return results // softmaxed probabilities
 	}
 
-	// MARK: Private
+	// MARK: - Private Methods
 
 	private func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage? {
 		UIGraphicsBeginImageContextWithOptions(targetSize, false, 1.0)
@@ -113,12 +118,5 @@ final class TorchModuleWrapper {
 		}
 
 		return floatBuffer
-	}
-
-	private func softmax(_ logits: [Float]) -> [Float] {
-		let maxLogit = logits.max() ?? 0
-		let exps = logits.map { exp($0 - maxLogit) }
-		let sumExps = exps.reduce(0, +)
-		return exps.map { $0 / sumExps }
 	}
 }
