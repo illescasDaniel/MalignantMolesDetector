@@ -6,6 +6,7 @@ Simple iOS app to detect malignant moles in your skin using a convolutional neur
 - Neural network used to train the dataset using transfer learning: MobileNetV3
 - [ ] TODO: add disclaimer screen showing how to take pictures properly and showing some examples
 - [ ] TODO: improve horizontal layout and layout in iPad
+- This project makes use of Torch Mobile, example project: https://github.com/pytorch/ios-demo-app/tree/master/HelloWorld
 
 <img src="screenshot.jpeg" width="250" style="border: 2px solid black;">
 
