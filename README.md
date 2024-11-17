@@ -4,7 +4,8 @@ Simple iOS app to detect malignant moles in your skin using a convolutional neur
 
 - Dataset: https://www.kaggle.com/datasets/fanconic/skin-cancer-malignant-vs-benign
 - Neural network used to train the dataset using transfer learning: MobileNetV3
-- This project makes use of PyTorch Mobile, example project: https://github.com/pytorch/ios-demo-app/tree/master/HelloWorld
+- This project makes use of PyTorch Mobile (LibTorch-Lite) using CocoaPods. 
+- Example project for PyTorch Mobile: https://github.com/pytorch/ios-demo-app/tree/master/HelloWorld
 - [ ] TODO: add disclaimer screen showing how to take pictures properly and showing some examples
 - [ ] TODO: improve horizontal layout and layout in iPad
 
